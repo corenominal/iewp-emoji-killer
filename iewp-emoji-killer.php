@@ -22,9 +22,9 @@ function iewp_disable_emojis()
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-    add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+    add_filter( 'tiny_mce_plugins', 'iewp_disable_emojis_tinymce' );
 }
-add_action( 'init', 'disable_emojis' );
+add_action( 'init', 'iewp_disable_emojis' );
 
 function iewp_disable_emojis_tinymce( $plugins )
 {
